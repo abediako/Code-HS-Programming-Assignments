@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class MultipleInputs
+{
+    Scanner keyboard = new Scanner(System.in);
+    
+    //variables declared
+    
+    String message = "to be determined";
+    String highSchool;
+    String favoriteSubject;
+    int hateNumber;
+    
+     void getHighSchool()
+        {
+            System.out.println("Where do you go to high school?");
+            highSchool = keyboard.nextLine();
+            message = "You go to " +highSchool;
+        }
+        void getFavoriteSubject()
+        {
+            System.out.println("What's your favorite subject?");
+            favoriteSubject = keyboard.nextLine();
+            message+= " and your favorite subject is "+ favoriteSubject+ "." ;
+            
+        }
+        
+        void getHateNumber()
+        {
+            System.out.println("What is your least favorite number?");
+            hateNumber = keyboard.nextInt();
+            message+= "\nFun fact: Your least favorite number is "+ hateNumber+". Interesting!" ;
+        }    
+        
+        void displayOutput()
+        {
+            System.out.println(message);
+        
+    }
+    
+    public static void main(String[] args)
+    {
+        MultipleInputs answers = new MultipleInputs();
+        answers.getHighSchool();
+        answers.getFavoriteSubject();
+        answers.getHateNumber();
+        answers.displayOutput();
+    }
+}
