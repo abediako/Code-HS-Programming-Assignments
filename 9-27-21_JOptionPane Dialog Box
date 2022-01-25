@@ -1,0 +1,50 @@
+import javax.swing.JOptionPane; // allows for gui boxws to display
+
+public class MyProgram 
+{
+    //declare class level variables -- the whole class can see them
+    String firstName, lastName;
+    double howMuchMoney; //decimal values
+    int yearsOfExperience; //whole numbers
+    
+    //create methods or functions to organize your code
+    public void getInput()
+    {
+        //get String input
+        firstName = JOptionPane.showInputDialog("Type in first name");    
+        
+        //get Numeric input -- by storing the value in a temporary location first, then changing it to a numerical value
+        
+        //declare a "Local" variable only accesible herer in this method
+        String temp;
+        temp = JOptionPane.showInputDialog("How much money do you have?");
+        
+        //convert the temp value to a double
+        howMuchMoney = Double.parseDouble(temp);
+        
+        //ask for years of experience and store a string
+        temp = JOptionPane.showInputDialog("How many years of experience do you have?");
+        
+        //convert the String to an Intergrr by pari=sinf it and store in Years of Experience
+        yearsOfExperience = Integer.parseInt(temp);
+    }
+    
+    
+    public void showOutput()
+    {
+        JOptionPane.showMessageDialog(null, "Hello "+firstName+ 
+        "\n You broke girl! Only "+howMuchMoney+" dollars?"+ 
+        "\n You've been working on this for "+yearsOfExperience+" years? Dang.");
+        }
+    
+    
+    public static void main(String[] args) 
+    {
+        //instantiate the class
+        MyProgram myLittlePony = new MyProgram();
+        
+        //run some methods in your class
+        myLittlePony.getInput();
+        myLittlePony. showOutput();
+    }
+}
