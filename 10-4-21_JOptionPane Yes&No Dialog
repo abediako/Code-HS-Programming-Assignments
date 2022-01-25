@@ -1,0 +1,67 @@
+import javax.swing.*;//needed for swing graphics
+
+public class YesNoDialogBox
+{
+ /*Sometimes, the input you want from a user does not have to be typed from the keyboard. When you present simple
+  * options to a user, you can offer buttons that the user can click to confirm a choice.
+  * 
+  * The showConfirmDialog() method returns an integer containing one of three possible values:
+  * JOptionPane.YES_OPTION,
+  * JOptionPane.NO_OPTION, or
+  * JOptionPane.CANCEL_OPTION
+  * 
+  */
+
+ //button presses will be stored as numeric values
+ 
+ //variable to store the yes/no user choice
+ int userSelection;
+ 
+ //show the result of the user choice
+ boolean result;
+
+
+
+ //instantiated into an object
+ public void showDialogBoxBasic()
+ {
+     JOptionPane.showMessageDialog(null, "Would you like to continue?");
+ }
+
+ 
+
+ public void showDialogBoxMoreOptions()
+ {
+    userSelection = JOptionPane.showConfirmDialog(
+        null,//the parent window to attatch to
+        "Do you want to continue?",//what's the message to display
+        "Audrey's YES/NO Window", // title of the window being displayed
+        JOptionPane.YES_NO_CANCEL_OPTION, //give 3 buttons to choose from
+        JOptionPane.ERROR_MESSAGE //show error message icon 
+        );
+        
+    result = (userSelection == JOptionPane.YES_OPTION);
+        
+  //show the result of the button press
+ JOptionPane.showMessageDialog(null, "You responded "+result);
+
+ }
+
+ 
+
+ public static void main(String[] args)
+ {
+
+  //makes an object out of the class in memory
+ YesNoDialogBox myApp = new YesNoDialogBox();
+
+ 
+  //tell your object to run some code in your class
+  myApp.showDialogBoxBasic();
+  myApp.showDialogBoxMoreOptions();
+
+ }
+
+ 
+
+}
