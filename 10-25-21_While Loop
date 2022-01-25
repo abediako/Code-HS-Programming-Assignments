@@ -1,0 +1,53 @@
+import javax.swing.*;
+
+public class WhileLoopDemo
+{
+	String input, secretWord = "Magic";
+	int numTries = 10;
+	
+	
+	//constructor method that runs automatically
+	public WhileLoopDemo()
+	{
+		//prime the control variable to get the initial value
+		input = JOptionPane.showInputDialog("I have a secret word"
+				+"\nYou have 10 chances to guess\n make your guess");
+		
+       //while the user's guess is wrong -- keep repeating to check user input
+        while(!input.equalsIgnoreCase(secretWord))
+            {
+                //decrement the number of tries
+                numTries--; //subtract 1
+                
+                if(numTries == 0)
+                {
+                    JOptionPane.showMessageDialog(null, "Game Over. Go Home.");
+                    
+                    //endJOptionPane programs
+                    System.exit(0);
+                }
+                
+                //inform that the wrong answer was given and tell number of guesses left
+                JOptionPane.showInputDialog("Wrong guess. Foolish baboon. "+ "\nYou have " + numTries +" chances to guess\n make your guess.");
+            }
+            
+        //outside the loop so the guessed the secret word
+        if(input.equalsIgnoreCase(secretWord))
+        {
+        JOptionPane.showMessageDialog(null, "Congratulations! \nYou guessed correctly!");
+        }
+
+
+
+
+				
+	}
+	
+	public static void main(String[] args)
+	{
+		//make an object out of the class
+		new WhileLoopDemo();
+		//runs the constructor method above
+		
+	}
+}
