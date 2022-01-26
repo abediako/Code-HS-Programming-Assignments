@@ -1,0 +1,21 @@
+import javax.swing.JOptionPane;
+
+public class ValueReturnDemo
+{
+
+	public static void main(String[] args)
+	{
+	    int valueA = 27;
+	    int valueB = 13;
+	    
+	    System.out.println("the sum of "+valueA+" and "+valueB+" equals "+ doSomeMath(valueA, valueB));
+	}
+
+    public static int doSomeMath(int firstNum, int secondNum)
+    {
+        int sum = firstNum + secondNum;
+        
+        return sum;
+    }
+
+}
