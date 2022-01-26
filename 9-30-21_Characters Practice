@@ -1,0 +1,88 @@
+import java.util.Scanner; //for keyboard input
+public class UsingCharacters
+
+{
+
+ /*A character can be any letter—upper case or lower case.
+  * It also might be a punctuation mark or digit.
+  * A character that is a digit is represented in computer
+  * memory differently from a numeric value represented
+  * by the same digit. 
+  */
+
+ 
+
+ //make the scanner object so you can tell it to do stuff
+ Scanner keyInput = new Scanner(System.in);
+
+
+ //characters need to be enclosed in single quotes
+ //declare and initialize a variable
+    char firstInitial = 'A'; 
+    
+ //just declare a variable
+    char lastInitial;
+ 
+
+ public void getUserInitials()
+
+ {
+    System.out.println("The value of the first initial currently is "+ firstInitial);
+    System.out.println("The value of the last initial currently is "+ lastInitial);
+    
+    System.out.println("What is your first inital?");
+    firstInitial = keyInput.nextLine().charAt(0);
+    System.out.println("What is your last initial?");
+    lastInitial = keyInput.nextLine().charAt(0);
+    
+    System.out.println("The value of first inital is now: " + firstInitial);
+    System.out.println("The value of last inital is now: " + lastInitial);
+ }
+ 
+
+ public void checkCharVersusInt()
+
+ {
+    char charValue = 9;
+    int numValue = 9;
+    
+    System.out.println("The value of Char is now: " + charValue);
+    System.out.println("The value of num is now: " + numValue);
+ }
+
+ 
+
+ public void nameFromUnicodeValues()
+
+ {
+  //add code here from the class demo
+  //first name out of unicode values
+  
+  char letter1 = 65;
+  char letter2 = 117;
+  char letter3 = 100;
+  char letter4 = 114;
+  char letter5 = 101;
+  char letter6 = 121;
+  
+  System.out.println("Your name is "+ letter1 + letter2 + letter3 + letter4 + letter5 + letter6);
+ }
+
+
+ public static void main(String[] args)
+
+ {
+  //make an object out of the whole class so you can 
+  //tell it to do stuff
+
+  UsingCharacters charTesting = new UsingCharacters();
+
+  //tell the object to run some methods you created
+
+  charTesting.getUserInitials();
+  charTesting.checkCharVersusInt();
+  charTesting.nameFromUnicodeValues();
+
+ }
+
+}
