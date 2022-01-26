@@ -1,0 +1,66 @@
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
+/**
+   Chapter 5 Demo--- Average Rainfall over a period of years
+ */
+public class AverageRainfall
+{
+	public static void main(String[] args)
+	{
+		final int NUM_MONTHS = 12; // Months per year
+		int years;                 // Number of years
+		double monthRain;          // Rain for a month
+		double totalRain = 0.0;      // Rainfall accumulator
+		double average;            // Average rainfall
+
+		 // Used to control how many decimal places will be displayed
+		DecimalFormat formatter = new DecimalFormat("##.00");
+
+
+		// Get the number of years from the user.
+		String temp = JOptionPane.showInputDialog("Enter the number of years: ");
+		years = Integer.parseInt(temp);
+
+		// Validate the input. No negative values
+		while (years < 1)
+		{
+			temp = JOptionPane.showInputDialog("Invalid. Enter 1 or greater: ");
+			years = Integer.parseInt(temp);
+		}
+
+		JOptionPane.showMessageDialog(null, "You will now enter the rainfall, in inches, " +
+				"for each month.");
+		// Use a for-loop Iterate for each year
+        for(int currentYear = 1; currentYear < years; currentYear++)
+        {
+            // use a nested for-loop to Iterate for each month in a year
+         for(int month = 1; month <= 12; month++)
+            {
+                //get rainfall for the month
+                temp= JOptionPane.showInputDialog("Year" + currentYear+ " month #"+month);
+                monthRain = Integer.ParseInt(temp);
+                
+                //validate the input
+                while(monthRain<0)
+                {
+                    //can't have negative rainfall and geth the rainfall for that month
+                    	temp = JOptionPane.showInputDialog("Invalid. No negative numbers. Please enter amount again");
+			            monthRain = Integer.parseInt(temp);
+                }
+                totalRain += monthRain;
+            }
+        }
+        
+
+
+
+		// Calculate the average rainfall.
+		average = totalRain / (years * NUM_MONTHS);
+
+		// Display the statistics.
+		JOptionPane.showMessageDialog(null, "Number of months: " + (years * NUM_MONTHS)
+				+"\nTotal rainfall: " + totalRain + " inches"
+				+"\nAverage monthly rainfall: " + formatter.format(average) + " inches");
+	}
+}
