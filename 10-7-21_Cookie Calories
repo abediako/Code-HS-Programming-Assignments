@@ -1,0 +1,88 @@
+import javax.swing.JOptionPane;
+public class MagicDateDecisionDemo
+
+{
+ //variables for the program
+ int month, day, year;
+
+ public void getDates()
+ {
+  //get the month
+  String temp = JOptionPane.showInputDialog( "Enter the number"
+    +" for the month you were born");
+
+  //parse the string to an integer
+    month = Integer.parseInt(temp); //in parantheses, put what you want to change
+
+  //get the day
+  temp = JOptionPane.showInputDialog( "Enter the number"
+    +" for the day you were born");
+
+  //parse the string to an integer
+    day = Integer.parseInt(temp);
+
+  //get the year - underneath; different variation
+  //parse the string to an integer
+    year = Integer.parseInt(JOptionPane.showInputDialog( "Enter the two digit number"
+    +" for the year you were born")); //(same as temp) 
+ }
+
+
+ public void isMagicDate()
+ {
+  //create a decision structure to determine if it is a magic date?
+  
+  if (month == day && month == year)
+  {
+    JOptionPane.showMessageDialog(null, "You have an extra magical date!");
+    JOptionPane.showMessageDialog(null, "You are worthy.");
+   }
+  
+  else if (month == day)
+  {
+    JOptionPane.showMessageDialog(null, "You have a magic date!!");
+    JOptionPane.showMessageDialog(null, "The month matches the day.");
+  }
+  
+   else if (year == day)
+   {
+    JOptionPane.showMessageDialog(null, "You have a magic date!!");
+    JOptionPane.showMessageDialog(null, "The year matches the day.");
+   }
+   
+    else if (month == year)
+   {
+    JOptionPane.showMessageDialog(null, "You have a magic date!!");
+    JOptionPane.showMessageDialog(null, "The month matches the year");
+   }
+   
+    else
+    {
+     JOptionPane.showMessageDialog(null, "You don't have a magic date :(");
+     JOptionPane.showMessageDialog(null, "You are not worthy. Argue wit ya mama!");
+   }
+    
+ }
+
+ //You can combine multiple boolean statements together
+
+ //with logical operators
+
+ public void isMagicDatePartTwo()
+
+ {
+  //use logical operators to combine boolean statements
+  //is the date magic?
+ }
+
+
+ public static void main(String[] args)
+ {
+  MagicDateDecisionDemo myApp = new MagicDateDecisionDemo();//make an object out of the class
+  myApp.getDates();//tell the object to run some code
+  myApp.isMagicDate();
+
+ }
+
+
+}
