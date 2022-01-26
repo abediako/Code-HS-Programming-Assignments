@@ -1,0 +1,197 @@
+import javax.swing.JOptionPane;
+
+public class ChickenOrBeefStarter
+{
+	String userInput;
+	String foodChoice; //chicken, beef, or vegi
+	double price;
+
+	//constructor method that runs automatically
+	public ChickenOrBeefStarter()
+	{
+		//add code to run the methods you made
+		getUserChoice();
+		
+	    //compare string values to see if the match; different from char
+		if(foodChoice.equalsIgnoreCase("Chicken"))
+		{
+		    //run the method to get chicken order
+		    getChickenOrder();
+		}
+		else if(foodChoice.equalsIgnoreCase("Beef"))
+		{
+		    getBeefOrder();
+		}
+		else if(foodChoice.equalsIgnoreCase("Vegetarian"))
+		{
+		    getVegetarianOrder();
+		}
+		else
+		{
+		    JOptionPane.showMessageDialog(null,"You messed up. No food for you. Try again.");
+		    getUserChoice();
+		}
+
+
+	}
+
+	//getting input and how to compare characters
+	public void getUserChoice()
+	{
+		String temp;
+		temp = JOptionPane.showInputDialog("Do you feel like eating chicken, beef, or vegetarian?");
+		
+		//compare characters to see if the match by getting first letter of what they type
+		if(temp.charAt(0) == 'c' || temp.charAt(0) == 'C')
+		{
+		    foodChoice = "Chicken";
+		    JOptionPane.showMessageDialog(null, "You chose chicken");
+		    getChickenOrder();
+	        
+		}
+		else if(temp.charAt(0) == 'b' || temp.charAt(0) == 'B')
+		{
+		    foodChoice = "Beef";
+		    JOptionPane.showMessageDialog(null, "You chose beef");
+		    
+		}
+		else if(temp.charAt(0) == 'v' || temp.charAt(0) == 'V')
+		{
+		    foodChoice = "Vegetarian";
+		    JOptionPane.showMessageDialog(null, "You chose vegetarian");
+		    
+		}
+		else
+		{
+		    JOptionPane.showMessageDialog(null, "You messed up. No food for you. Try again.");
+		    getUserChoice(); //run the method, have parantheses after methods
+		}
+	}
+
+	public void getChickenOrder()
+	{
+	    String temp;
+		temp = JOptionPane.showInputDialog("Do you want sandwiches or tenders?");
+		
+		//compare characters to see if the match by getting first letter of what they type
+		if(temp.charAt(0) == 's' || temp.charAt(0) == 'S')
+		{
+		    foodChoice = "Chicken";
+		    JOptionPane.showMessageDialog(null, "You chose chicken sandwich");
+		    
+		    String chic;
+		    chic = JOptionPane.showInputDialog("How many chicken sandwiches would you like?");
+       
+            price = 4.34 * Double.parseDouble(chic);
+            JOptionPane.showMessageDialog(null, "That will be $" + price + " Thank you.");
+	        
+		}
+		else if(temp.charAt(0) == 't' || temp.charAt(0) == 'T')
+		{
+		    foodChoice = "Tenders";
+		    JOptionPane.showMessageDialog(null, "You chose chicken tenders");
+		    
+		    String chic;
+		    chic = JOptionPane.showInputDialog("How many chicken tenders would you like?");
+       
+            price = .70 * Double.parseDouble(chic);
+            JOptionPane.showMessageDialog(null, "That will be $" + price + " Thank you.");
+		    
+		}
+        else
+		{
+		    JOptionPane.showMessageDialog(null, "You messed up. No food for you. Try again.");
+		    getChickenOrder(); //run the method, have parantheses after methods
+		}
+	}
+
+	public void getBeefOrder()
+	{
+        String temp;
+        temp = JOptionPane.showInputDialog("Do you want steak, hamburgers, or cheesburgers?");
+
+        	if(temp.charAt(0) == 's' || temp.charAt(0) == 'S')
+		{
+		    foodChoice = "Steak";
+		    JOptionPane.showMessageDialog(null, "You chose steak");
+		    
+		    String beef;
+		    beef = JOptionPane.showInputDialog("How many steaks would you like?");
+       
+            price = 25.00 * Double.parseDouble(beef);
+            JOptionPane.showMessageDialog(null, "That will be $" + price + " Thank you.");
+	        
+		}
+		else if(temp.charAt(0) == 'h' || temp.charAt(0) == 'H')
+		{
+		    foodChoice = "Hamburgers";
+		    JOptionPane.showMessageDialog(null, "You chose hamburgers");
+		    
+		    String beef;
+		    beef = JOptionPane.showInputDialog("How many hamburgers would you like?");
+       
+            price = 2.50 * Double.parseDouble(beef);
+            JOptionPane.showMessageDialog(null, "That will be $" + price + " Thank you.");
+		    
+		}
+		else if(temp.charAt(0) == 'c' || temp.charAt(0) == 'C')
+		{
+		    foodChoice = "Cheeseburgers";
+		    JOptionPane.showMessageDialog(null, "You chose cheeseburgers");
+		    
+		    String beef;
+		    beef = JOptionPane.showInputDialog("How many cheeseburgers would you like?");
+       
+            price = 2.70 * Double.parseDouble(beef);
+            JOptionPane.showMessageDialog(null, "That will be $" + price + " Thank you.");
+		    
+		}
+		else
+		{
+		    JOptionPane.showMessageDialog(null, "You messed up. No food for you. Try again.");
+		    getBeefOrder(); //run the method, have parantheses after methods
+		}
+	}
+
+    public void getVegetarianOrder()
+	{
+        String veg;
+        veg = JOptionPane.showInputDialog("Would you like caesar or southwest salad?");String temp;
+       
+        if(veg.charAt(0) == 's' || veg.charAt(0) == 'S')
+		{
+		    foodChoice = "Southwest";
+		    JOptionPane.showMessageDialog(null, "You chose southwest");
+		    
+		    String south;
+		    south = JOptionPane.showInputDialog("How many salads would you like?");
+       
+            price = 9.5 * Double.parseDouble(south);
+            JOptionPane.showMessageDialog(null, "That will be $" + price + " Thank you.");
+	        
+		}
+		else if(veg.charAt(0) == 'c' || veg.charAt(0) == 'C')
+		{
+		    foodChoice = "Caesar";
+		    JOptionPane.showMessageDialog(null, "You chose caesar");
+		    
+		    String greece;
+		    greece = JOptionPane.showInputDialog("How many hamburgers would you like?");
+       
+            price = 9.0 * Double.parseDouble(greece);
+            JOptionPane.showMessageDialog(null, "That will be $" + price + " Thank you.");
+		}
+        else
+		{
+		    JOptionPane.showMessageDialog(null, "You messed up. No food for you. Try again.");
+		    getVegetarianOrder(); //run the method, have parantheses after methods
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		// START THE program and run the constructor method
+		new ChickenOrBeefStarter();
+	}
+
+}
