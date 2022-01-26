@@ -1,0 +1,59 @@
+public class UsingBooleans
+
+{
+ //class level variables
+
+ boolean isTrue; //default values for booleans are actually false unless specified otherwise
+ boolean isHotOutside = false;
+ boolean isOvertimePay;
+ int workHours = 27;
+
+
+ boolean isPlayerOneTheWinner;
+ int playerOneScore = 10;
+ int playerTwoScore = 15; 
+
+ public void checkLocalBooleanValues()
+
+ {
+  //local variables that are only accessible inside this method
+    boolean isSixBigger = (6 > 5);
+    System.out.println("Is six bigger than five? " + isSixBigger);
+    System.out.println(8 <=5*(2+6));
+ }
+
+ 
+
+ public void checkGlobalBooleanValues() //the variables at the top
+
+ {
+  //determine if you get overtime pay or not
+  System.out.println("Did you get overtime? " + (isOvertimePay = workHours >40));
+
+  //did player one win
+  isPlayerOneTheWinner = playerOneScore > playerTwoScore;
+  System.out.print("Did Player One win? " + isPlayerOneTheWinner);
+ }
+
+
+ public static void main(String[] args)
+
+ {
+
+  //make an object out of the whole class so you can tell it to do stuff
+
+  UsingBooleans boolChecker = new UsingBooleans();
+
+ 
+
+  //tell your object to run methods in your class
+
+  boolChecker.checkLocalBooleanValues();
+
+  boolChecker.checkGlobalBooleanValues();
+
+ 
+
+ }
+
+}
